@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
+
 
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
 
 class _SecondPageState extends State<SecondPage> {
+
   @override
   Widget build(BuildContext context) {
+    String cdate = DateFormat("dd-MM-yyyy").format(DateTime.now());
     return Scaffold(
       backgroundColor: const Color(0xfffd4af37),
       bottomNavigationBar: BottomNavigationBar(
@@ -35,7 +39,7 @@ class _SecondPageState extends State<SecondPage> {
 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children:  [
                           Text(
                             "Hi Nikhil !",
                             style: TextStyle(
@@ -47,7 +51,7 @@ class _SecondPageState extends State<SecondPage> {
                             height: 2,
                           ),
                           Text(
-                            '10-Jan-23',
+                            cdate,
                             style: TextStyle(
                                 color: Color(0xffffbf1de),
                                 fontSize: 17,
